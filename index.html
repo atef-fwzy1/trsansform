@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script tester</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(35, 35, 249);
+    }
+    h1{
+        font-size: 30px;
+        text-transform:uppercase;
+        color: white;
+    }
+.box{
+    width: 40%;
+    height: 50%;
+  
+    margin:200px auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+gap: 15px;
+}
+.box div{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   font-size: 20px;
+   border: 2px solid rgb(107, 15, 15);
+
+   position:relative;
+}
+.box div::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:rgb(107, 15, 15) ;
+    z-index: 5;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.box div::before{
+    content: "";
+    position: absolute;
+    background-color:rgba(154, 70, 70, 0.532) ;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    animation: rotat 3s ease-in-out infinite;
+   
+}
+.box div:nth-child(1):before{
+transform-origin: left top;
+}
+.box div:nth-child(1)::after{
+    top: 0;
+    left: 0;
+}
+.box div:nth-child(2):before{
+transform-origin: center top;
+}
+.box div:nth-child(2)::after{
+    top: 0;
+    left: 50%;
+}
+.box div:nth-child(3):before{
+transform-origin: right top;
+}
+.box div:nth-child(3)::after{
+    top: 0;
+    left: 100%;
+}
+.box div:nth-child(4):before{
+transform-origin: left center;
+}
+.box div:nth-child(4)::after{
+    top: 50%;
+    left: 0;
+}
+.box div:nth-child(5):before{
+transform-origin: center center;
+}
+.box div:nth-child(5)::after{
+    top: 50%;
+    left: 50;
+}
+.box div:nth-child(6):before{
+transform-origin: right center;
+}
+.box div:nth-child(6)::after{
+    top: 50%;
+    left: 100%;
+}
+.box div:nth-child(7):before{
+transform-origin: left bottom;
+}
+.box div:nth-child(7)::after{
+    top: 100%;
+    left: 0%;
+}
+.box div:nth-child(8):before{
+transform-origin: center bottom;
+}
+.box div:nth-child(8)::after{
+    top:100%;
+    left: 50%;
+}
+.box div:nth-child(9):before{
+transform-origin: right bottom;
+}
+.box div:nth-child(9)::after{
+    top: 100%;
+    left: 100%;
+}
+@keyframes rotat{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+</style>
+<body>
+  
+<h1>transform-origin</h1>
+<div class="box">
+<div class="bareant"><span>origin left top</span></div>
+<div class="bareant"><span>origin center top</span></div>
+<div class="bareant"><span>origin right top</span></div>
+<div class="bareant"><span>origin left center</span></div>
+<div class="bareant"><span>origin center center</span></div>
+<div class="bareant"><span>origin right center</span></div>
+<div class="bareant"><span>origin left bootom</span></div>
+<div class="bareant"><span>origin center bootom</span></div>
+<div class="bareant"><span>origin right bootom</span></div>
+</div>
+    <script src="/java/active.js"></script>
+</body>
+</html>
